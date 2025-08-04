@@ -1,24 +1,30 @@
-// app/components/HomeButton.tsx
+// ===========================================
+// File: app/components/HomeButton.tsx
+// This component provides a styled, reusable button for navigating
+// between screens. It now accepts a `title`, `href`, and `color` prop.
+// ===========================================
 
-import { TouchableOpacity, Text } from 'react-native';
+import { Link, LinkProps } from 'expo-router';
 import React from 'react';
-import { TailwindProvider } from 'tailwindcss-react-native';
+import { Text, TouchableOpacity } from 'react-native';
 
+// Define the props for the HomeButton component.
 interface HomeButtonProps {
     title: string;
-    onPress: () => void;
+    href: LinkProps['href'];
+    // Added a color prop to allow different background colors.
+    color: string;
 }
 
-const HomeButton = ({ title, onPress }: HomeButtonProps) => {
+const HomeButton: React.FC<HomeButtonProps> = ({ title, href, color }) => {
     return (
-        <TailwindProvider>
+        <Link href={href} asChild>
             <TouchableOpacity
-                className="bg-green-500 rounded-lg p-5 m-2 items-center justify-center shadow-lg w-40 h-40"
-                onPress={onPress}
+                className={`bg-${color}-500 rounded-lg p-6 m-2 w-40 h-40 items-center justify-center shadow-md`}
             >
-                <Text className="text-white text-lg font-bold">{title}</Text>
+                <Text className="text-white text-lg font-bold text-center">{title}</Text>
             </TouchableOpacity>
-        </TailwindProvider>
+        </Link>
     );
 };
 
