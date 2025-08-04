@@ -11,14 +11,25 @@ import React from 'react';
 const RootLayout = () => {
     return (
         <Stack>
+            {/* The index screen is the home screen, with no header. */}
             <Stack.Screen name="index" options={{ headerShown: false }} />
+
+            {/* The Complains screen for submitting complaint forms. */}
             <Stack.Screen name="screens/Complains" options={{ title: 'Submit a Complaint' }} />
-            {/* Add the new ScanDisease screen here */}
+
+            {/* The ScanDisease screen for using the camera to scan for diseases. */}
             <Stack.Screen name="screens/ScanDisease" options={{ title: 'Disease Scan' }} />
-            {/* You'll add SocialNetwork and Other screens here later */}
+
+            {/* The SocialNetwork screen, which shows a list of posts. */}
             <Stack.Screen name="screens/SocialNetwork" options={{ title: 'Social Network' }} />
+
+            {/* The PostDetails screen, which shows the details of a single post. */}
+            <Stack.Screen name="screens/PostDetails" options={{ title: 'Post Details' }} />
+
+            {/* A placeholder for other services. */}
             <Stack.Screen name="screens/Other" options={{ title: 'Other Services' }} />
         </Stack>
     );
 };
+
 export default RootLayout;
