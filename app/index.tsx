@@ -1,7 +1,7 @@
 // ===========================================
 // File: app/index.tsx
 // This file is the main home screen of the application.
-// It now includes buttons for Safety Tips and Disease History.
+// The buttons now navigate to the new list screens.
 // ===========================================
 
 import { StatusBar } from 'expo-status-bar';
@@ -38,10 +38,10 @@ const HomeScreen = () => {
                         <HomeButton title="Social" href="/screens/SocialNetwork" color="green" />
 
                         {/* 4. Safety Tips */}
-                        <HomeButton title="Safety Tips" href="/screens/SafetyTips" color="purple" />
+                        <HomeButton title="Safety Tips" href="/screens/SafetyTipsList" color="purple" />
 
                         {/* 5. Disease History */}
-                        <HomeButton title="Disease History" href="/screens/DiseaseHistory" color="orange" />
+                        <HomeButton title="Disease History" href="/screens/DiseaseHistoryList" color="orange" />
 
                         {/* 6. Others */}
                         <HomeButton title="Others" href="/screens/Other" color="yellow" />

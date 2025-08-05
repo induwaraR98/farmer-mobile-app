@@ -2,6 +2,7 @@
 // File: app/screens/Menu.tsx
 // This screen acts as the hamburger menu, displaying a list of
 // navigation options for the user.
+// The navigation links are updated to point to the new list screens.
 // ===========================================
 
 import { View, Text, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
@@ -25,7 +26,7 @@ const MenuScreen = () => {
                 <View style={styles.menuItemContainer}>
                     <TouchableOpacity
                         style={styles.menuItem}
-                        onPress={() => handleNavigation('/screens/DiseaseHistory')}
+                        onPress={() => handleNavigation('/screens/DiseaseHistoryList')}
                     >
                         <Text style={styles.menuItemText}>Disease History</Text>
                     </TouchableOpacity>
@@ -37,7 +38,7 @@ const MenuScreen = () => {
                     </TouchableOpacity>
                     <TouchableOpacity
                         style={styles.menuItem}
-                        onPress={() => handleNavigation('/screens/SafetyTips')}
+                        onPress={() => handleNavigation('/screens/SafetyTipsList')}
                     >
                         <Text style={styles.menuItemText}>Safety Tips</Text>
                     </TouchableOpacity>

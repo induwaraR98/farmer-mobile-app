@@ -19,6 +19,7 @@ const mockComplains = [
 const ComplainListScreen = () => {
     const router = useRouter();
 
+    // @ts-ignore
     const renderComplainItem = ({ item }) => (
         <TouchableOpacity
             style={styles.complainItem}
