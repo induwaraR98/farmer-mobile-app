@@ -1,7 +1,7 @@
 // ===========================================
-// File: app/complains.tsx
+// File: app/screens/Complains.tsx
 // This is the main component for the complains form screen.
-// It includes the form state, UI components, and button handlers.
+// It now includes a button to navigate to the list of complaints.
 // ===========================================
 
 import { View, Text, TextInput, TouchableOpacity, ScrollView, Alert, Image } from 'react-native';
@@ -9,7 +9,7 @@ import React, { useState } from 'react';
 import { Picker } from '@react-native-picker/picker';
 import * as ImagePicker from 'expo-image-picker';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { Stack } from 'expo-router';
+import { Stack, useRouter } from 'expo-router';
 
 // Define a type for the priority options
 type Priority = 'low' | 'medium' | 'high';
@@ -20,6 +20,7 @@ const ComplainsScreen = () => {
     const [priority, setPriority] = useState<Priority>('medium');
     const [reason, setReason] = useState('');
     const [attachments, setAttachments] = useState<string[]>([]);
+    const router = useRouter();
 
     // Function to handle image picking
     const pickImage = async () => {
@@ -172,6 +173,16 @@ const ComplainsScreen = () => {
                     </TouchableOpacity>
                 </View>
             </ScrollView>
+
+            {/* "View my complains" Button */}
+            <View className="mt-4">
+                <TouchableOpacity
+                    className="bg-blue-500 rounded-lg p-4 items-center shadow-md"
+                    onPress={() => router.push('/screens/ComplainList')}
+                >
+                    <Text className="text-white text-lg font-bold">View My Complains</Text>
+                </TouchableOpacity>
+            </View>
         </SafeAreaView>
     );
 };

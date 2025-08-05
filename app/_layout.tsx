@@ -44,6 +44,12 @@ const RootLayout = () => {
             {/* The EditProfile screen. */}
             <Stack.Screen name="screens/EditProfile" options={{ title: 'Edit Profile' }} />
 
+            {/* The ComplainList screen to view all submitted complaints. */}
+            <Stack.Screen name="screens/ComplainList" options={{ title: 'My Complains' }} />
+
+            {/* The ComplainDetails screen to view a specific complaint. */}
+            <Stack.Screen name="screens/ComplainDetails" options={{ title: 'Complain Details' }} />
+
             {/* A placeholder for other services. */}
             <Stack.Screen name="screens/Other" options={{ title: 'Other Services' }} />
         </Stack>

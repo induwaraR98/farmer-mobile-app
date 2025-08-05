@@ -23,6 +23,7 @@ const ProfileScreen = () => {
 
     // A function to handle navigation to various screens.
     const handleNavigation = (path: string) => {
+        // @ts-ignore
         router.push(path);
     };
 

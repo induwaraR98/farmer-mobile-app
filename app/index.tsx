@@ -1,7 +1,7 @@
 // ===========================================
 // File: app/index.tsx
 // This file is the main home screen of the application.
-// It now uses the custom Header component instead of the default Stack header.
+// It now includes buttons for Safety Tips and Disease History.
 // ===========================================
 
 import { StatusBar } from 'expo-status-bar';
@@ -37,7 +37,13 @@ const HomeScreen = () => {
                         {/* 3. Social Network */}
                         <HomeButton title="Social" href="/screens/SocialNetwork" color="green" />
 
-                        {/* 4. Others */}
+                        {/* 4. Safety Tips */}
+                        <HomeButton title="Safety Tips" href="/screens/SafetyTips" color="purple" />
+
+                        {/* 5. Disease History */}
+                        <HomeButton title="Disease History" href="/screens/DiseaseHistory" color="orange" />
+
+                        {/* 6. Others */}
                         <HomeButton title="Others" href="/screens/Other" color="yellow" />
                     </View>
                 </View>
