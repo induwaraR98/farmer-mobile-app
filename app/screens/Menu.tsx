@@ -14,6 +14,7 @@ const MenuScreen = () => {
 
     // A function to handle navigation from the menu
     const handleNavigation = (path: string) => {
+        // @ts-ignore
         router.push(path);
     };
 

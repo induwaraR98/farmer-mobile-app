@@ -32,6 +32,18 @@ const RootLayout = () => {
             {/* The Menu screen, for displaying the hamburger menu options. */}
             <Stack.Screen name="screens/Menu" options={{ title: 'Menu' }} />
 
+            {/* The Profile screen. */}
+            <Stack.Screen name="screens/Profile" options={{ title: 'Profile' }} />
+
+            {/* The Login screen. */}
+            <Stack.Screen name="screens/Login" options={{ title: 'Log In' }} />
+
+            {/* The Signup screen. */}
+            <Stack.Screen name="screens/Signup" options={{ title: 'Sign Up' }} />
+
+            {/* The EditProfile screen. */}
+            <Stack.Screen name="screens/EditProfile" options={{ title: 'Edit Profile' }} />
+
             {/* A placeholder for other services. */}
             <Stack.Screen name="screens/Other" options={{ title: 'Other Services' }} />
         </Stack>
