@@ -1,8 +1,7 @@
 // ===========================================
 // File: app/index.tsx
 // This file is the main home screen of the application.
-// It uses the HomeButton component to display links to various other screens.
-// The HomeButtons now have different colors and are larger in size.
+// It now uses the custom Header component instead of the default Stack header.
 // ===========================================
 
 import { StatusBar } from 'expo-status-bar';
@@ -16,6 +15,7 @@ import Header from './components/Header';
 const HomeScreen = () => {
     return (
         <SafeAreaView className="flex-1 bg-gray-100">
+            {/* We hide the default header and use our custom Header component */}
             <Stack.Screen options={{ headerShown: false }} />
             <Header />
             <ScrollView className="flex-1 p-4">

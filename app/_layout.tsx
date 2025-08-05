@@ -26,6 +26,12 @@ const RootLayout = () => {
             {/* The PostDetails screen, which shows the details of a single post. */}
             <Stack.Screen name="screens/PostDetails" options={{ title: 'Post Details' }} />
 
+            {/* The CreatePost screen, for adding new posts to the social feed. */}
+            <Stack.Screen name="screens/CreatePost" options={{ title: 'New Post' }} />
+
+            {/* The Menu screen, for displaying the hamburger menu options. */}
+            <Stack.Screen name="screens/Menu" options={{ title: 'Menu' }} />
+
             {/* A placeholder for other services. */}
             <Stack.Screen name="screens/Other" options={{ title: 'Other Services' }} />
         </Stack>

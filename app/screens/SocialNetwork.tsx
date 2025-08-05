@@ -1,16 +1,17 @@
 // ===========================================
 // File: app/screens/SocialNetwork.tsx
 // This is the main screen for the social network feature.
-// It displays a scrollable list of posts.
+// It displays a scrollable list of posts and now includes a
+// floating action button to create new posts.
 // ===========================================
 
-import { View, Text, ScrollView } from 'react-native';
+import { View, Text, ScrollView, TouchableOpacity } from 'react-native';
 import React from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { Stack } from 'expo-router';
-import PostCard from '../components/PostCard'; // Import the new PostCard component
+import { Stack, useRouter } from 'expo-router';
+import PostCard from '../components/PostCard'; // Import the PostCard component
 
-// Mock data for posts. In a real app, you would fetch this from an API.
+// Mock data for posts.
 const posts = [
     {
         id: '1',
@@ -35,18 +36,39 @@ const posts = [
 ];
 
 const SocialNetworkScreen = () => {
+    const router = useRouter();
+
+    const handleCreatePostPress = () => {
+        router.push('/screens/CreatePost');
+    };
+
     return (
         <SafeAreaView className="flex-1 bg-gray-100">
-            <Stack.Screen options={{ title: 'Social Network' }} />
-            <Text className="text-2xl font-bold text-gray-800 my-4 text-center">
-                Community Feed
-            </Text>
+            <Stack.Screen
+                options={{
+                    title: 'Community Feed',
+                    headerRight: () => (
+                        // A placeholder for the hamburger menu button. We'll add this next.
+                        <TouchableOpacity onPress={() => router.push('/screens/Menu')} className="mr-4">
+                            <Text className="text-red-500 font-bold text-xl">≡</Text>
+                        </TouchableOpacity>
+                    )
+                }}
+            />
 
             <ScrollView className="flex-1">
                 {posts.map((post) => (
                     <PostCard key={post.id} post={post} />
                 ))}
             </ScrollView>
+
+            {/* Floating Action Button for creating a new post */}
+            <TouchableOpacity
+                className="absolute bottom-6 right-6 bg-red-500 rounded-full w-14 h-14 items-center justify-center shadow-lg"
+                onPress={handleCreatePostPress}
+            >
+                <Text className="text-white text-3xl font-bold">+</Text>
+            </TouchableOpacity>
         </SafeAreaView>
     );
 };
